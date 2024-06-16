@@ -1,6 +1,5 @@
-
+eat
 clean
 play
 make
 write
-drink

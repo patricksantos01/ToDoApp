@@ -13,8 +13,7 @@ while True:
 
             todos.append(todo)
 
-            with open('todos.txt', 'w') as file:
-                file.writelines(todos)
+            
 
         case 'show':
 
@@ -29,11 +28,31 @@ while True:
 
             todo_number = int(input("Number of the todo to edit: "))
             todo_number = todo_number -1
+
+            with open('todos.txt', 'r') as file:
+                todos = file.readlines()
+
             new_todo = input("Enter new todo: ")
-            todos[todo_number] = new_todo
+            todos[todo_number] = new_todo + '\n'
+
+            
 
         case 'complete':
             todo_number = int(input("Number of the todo to complete: "))
+
+            with open('todos.txt', 'r') as file:
+                todos = file.readlines()
+            
+            index = todo_number - 1
+            todo_to_remove = todos[index].strip('\n')
             todos.pop(todo_number -1)
+
+            with open('todos.txt', 'w') as file:
+                file.writelines(todos)
+            
+            message = f"Todo {todo_to_remove} was removed from the list"
+            print(message)
+
+
         case 'exit':
             break
