@@ -2,3 +2,5 @@
 clean
 play
 make
+write
+drink
