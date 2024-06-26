@@ -1,5 +1,4 @@
 eat
 clean
-play
 make
 write
