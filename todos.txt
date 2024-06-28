@@ -2,3 +2,5 @@ eat
 clean
 make
 write
+play
+play some games

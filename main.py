@@ -4,13 +4,16 @@ while True:
     user_action = user_action.strip()
   
     if 'add' in user_action:
-        # adding a \n to break a line in todos.txt
-        todo = input("Enter a todo: ") + "\n"
+        # using list slicing
+        todo = user_action[4:]
 
         with open('todos.txt', 'r') as file:
             todos = file.readlines()
 
         todos.append(todo)
+
+        with open('todos.txt', 'w') as file:
+                file.writelines(todos)
 
     elif 'show' in user_action:
 
